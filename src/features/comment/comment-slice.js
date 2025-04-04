@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const commentsPosts = createAsyncThunk("commentThunk", async () => {
   try {
-    const comments = await axios.get(`https://jsonplaceholder.typicode.com/comments?postId=${id}`);
+    const comments = await axios.get(`https://jsonplaceholder.typicode.com/comments?postId=1`);
     // console.log(posts,"this is posts posts");
     // const postLists=posts.data;
     // console.log("this is postlist",postLists)

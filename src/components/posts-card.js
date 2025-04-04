@@ -20,8 +20,16 @@ const PostCard = () => {
     dispatch(listPosts())
    
   }, [])
-  function clickHandler(e){
-    console.log(`hellow i m ${e}`);
+  async function clickHandler(e) {
+    console.log(`hello I am ${e}`);
+  
+    try {
+      const res = await fetch(`https://jsonplaceholder.typicode.com/comments?postId=${e}`);
+      const data = await res.json();
+      console.log('This is data:', data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
   }
   return (
     <>
